@@ -1,0 +1,162 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	width:100%;
+	height:100%;
+	background: #00FC00;
+	background: linear-gradient(to bottom, #00FC00, #fefcea);
+}
+
+header{
+	float: left;
+	background-color: #00B200;  
+	width: 99.4%;
+	padding: 0.3%;
+	border-bottom: 5px solid #33ADFF;
+	padding-left: 5px;
+}
+
+header>span{
+	font-size: 30px;
+	color: white;
+	font-family: 'Verdana';
+	font-weight: 600;
+	position: absolute;
+	left: 60px;
+	top: 20px
+}
+
+nav{
+	width: 99.4%;
+	padding: 7px 0.3%;
+	background-color: #ABA252;
+	float: left;
+	border-bottom; 2px solid #F4F0CF;
+}
+
+/* flower */
+.d36 {
+width: 20px; 
+height: 20px; 
+margin: 0 0 30px 10px;
+border: 3px solid #AD1E21;
+background: #EB4E48;
+position: relative;
+transform: rotate(45deg);
+}  
+.d36:before, 
+.d36:after {
+content: "";
+position: absolute;
+width: 30px; 
+height: 50px;
+border: 3px solid #AD1E21;
+transform: rotate(-45deg);
+}
+.d36:before {
+background: #F8D9D1;
+border-radius: 0 100% 50% 90%;
+}
+.d36:after {
+left: 10px; 
+top: -10px;
+background: #F09C9C;
+border-radius: 100% 0  90% 50%;
+}
+/*--------------------------------*/
+/* indicate */
+.container{
+    width:100px;
+    height:350px;
+}
+
+.attendance{
+	width:90%;
+    float:left;
+	background-color:#1f1f1f;
+	margin:7px 5% 5px 5%;
+	padding-bottom:10px;
+	border-style:solid;
+	border-color: #111111 #4e4e4e #4e4e4e #111111;
+	border-width:2px;
+}
+
+.attendance .title{
+    font-family:"Arial";
+	color:white;
+	font-size:9pt;
+    font-weight:bold;
+	text-align:center;
+	padding:15px 0px 5px 0px;
+}
+
+.attendance-bar{
+    float:left;
+	width:90%;
+	margin:0px 5% 0px 5%;
+	height:260px;
+	background-color:#2f2f2f;
+	position:relative;
+}
+
+.attendance-cage-css{
+	width:100%;
+    float:left;
+}
+
+.bar-1,.bar-2,.bar-3,.bar-4,.bar-5,.bar-6,.bar-7,.bar-8,.bar-9{
+	float:left;
+	width:100%;
+	background-color:#1f1f1f;
+	height:10px;
+}
+
+.bar-1{
+	margin-bottom:14px;
+}
+
+.bar-2{
+	margin-bottom:15px;
+}
+
+.bar-3{
+	margin-bottom:16px;
+}
+
+.bar-4{
+	margin-bottom:17px;
+}
+
+.bar-5{
+	margin-bottom:18px;
+}
+
+.bar-6{
+	margin-bottom:19px;
+}
+
+.bar-7{
+	margin-bottom:20px;
+}
+
+.bar-8{
+	margin-bottom:24px;
+}
+
+.bar-9{
+	margin-bottom:22px;
+}
+
+.attendance-level{
+	position:absolute; /* добавили */
+	bottom:0; /* добавили */
+	float:left;
+    height:90%;
+	width:100%;
+	background-color:#0A94FF;
+	
+}
+/*---------------------------------*/
