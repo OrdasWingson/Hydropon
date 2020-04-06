@@ -1,5 +1,7 @@
 void HTTP_init(void) {
-  HTTP.on("/level", sendLevel);  
+  HTTP.on("/level", sendLevel); 
+  HTTP.on("/config", conf); //обработка конфигурации 
+  HTTP.on("/mode", changeMode); //смена режима работы сервера  
   // Запускаем HTTP сервер
   HTTP.begin();
 
@@ -7,12 +9,12 @@ void HTTP_init(void) {
 
 void sendLevel()
 {
+   digitalWrite(startViwe, HIGH);
+   delay(10);
    int sensorValue = analogRead(A0);
-   Serial.println(sensorValue); 
-   String value = String(sensorValue);
-   Serial.print("string ");
-   Serial.println(value); 
-   HTTP.send(200, "text/plain", value);
+   digitalWrite(startViwe, LOW);
+   HTTP.send(200, "text/plain", range(sensorValue)+'%');
+   
 }
 
 
@@ -48,4 +50,14 @@ void changeMode()
    HTTP.send(200, "text/plain", "OK"); // AP/STA
   saveConfig();
  
+}
+
+// функция пересчета
+
+String range(int x)
+{
+  int y = (-x+680)/4.8;
+  if ( y < 0 ) y = 0;
+  if ( y > 100) y = 100;
+  return String(y); 
 }

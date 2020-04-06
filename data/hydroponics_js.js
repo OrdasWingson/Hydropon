@@ -13,10 +13,10 @@ $(document).ready(function(){
 	var addres = getAddres(location.href);
 	var waterLevel //уровень влажности
 	
-	$(document).load('http://'+ addres +'/level', function(lvl){
-		alert(lvl);
+	setInterval(() => { $(document).load('http://'+ addres +'/level', function(lvl){ // 'http://'+ addres +'/level' 'http://127.0.0.1:8085/test.html'
+	$('.attendance-level').css('height',lvl);});}, 5000);
 		//$(arrButtID[i]).css('visibility','visible');
-	});
+	
 	
 });
 
