@@ -37,6 +37,10 @@ nav{
 	border-bottom; 2px solid #F4F0CF;
 }
 
+span#levelProc {
+  text-align:  center;
+}
+
 /* flower */
 .d36 {
 width: 20px; 

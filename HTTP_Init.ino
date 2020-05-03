@@ -9,12 +9,7 @@ void HTTP_init(void) {
 
 void sendLevel()
 {
-   digitalWrite(startViwe, HIGH);
-   delay(10);
-   int sensorValue = analogRead(A0);
-   digitalWrite(startViwe, LOW);
-   HTTP.send(200, "text/plain", range(sensorValue)+'%');
-   
+   HTTP.send(200, "text/plain", rangeString(sensorValue) +'%');  
 }
 
 
@@ -52,12 +47,33 @@ void changeMode()
  
 }
 
-// функция пересчета
+//
 
-String range(int x)
+void startWater(bool onOff)
+{
+  if(onOff)
+  {
+    digitalWrite(motorPin, HIGH);
+  }
+  else
+  {
+    digitalWrite(motorPin, LOW);
+  }
+}
+
+// функция пересчета
+String rangeString(int x)
 {
   int y = (-x+680)/4.8;
   if ( y < 0 ) y = 0;
   if ( y > 100) y = 100;
   return String(y); 
+}
+
+int rangeInt(int x)
+{
+  int y = (-x+680)/4.8;
+  if ( y < 0 ) y = 0;
+  if ( y > 100) y = 100;
+  return y; 
 }

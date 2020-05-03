@@ -5,20 +5,29 @@ function getAddres(addres)
 	return addres;
 }
 
+function swap(addres) {
+
+
+  var data = new Date().toLocaleDateString(); // 19.12.2019
+  var time = new Date().toLocaleTimeString(); // 11:02:48
+	$(document).load('http://'+ addres +'/level?data='+data+'&time='+time, function(lvl){ 
+		$('.attendance-level').css('height',lvl);});
+}
+
 
 
 $(document).ready(function(){
-		
-
 	var addres = getAddres(location.href);
+	swap(addres);
+
+	
 	var waterLevel //уровень влажности
 	
-	setInterval(() => { $(document).load('http://'+ addres +'/level', function(lvl){ // 'http://'+ addres +'/level' 'http://127.0.0.1:8085/test.html'
-	$('.attendance-level').css('height',lvl);});}, 5000);
+	setInterval(() => {swap(addres);}, 5000);
 		//$(arrButtID[i]).css('visibility','visible');
 	
 	
 });
-
+// 'http://'+ addres +'/level' 'http://127.0.0.1:8085/test.html'
 
 				
