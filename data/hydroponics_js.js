@@ -7,11 +7,11 @@ function getAddres(addres)
 
 function swap(addres) {
 
-
-  var data = new Date().toLocaleDateString(); // 19.12.2019
-  var time = new Date().toLocaleTimeString(); // 11:02:48
-	$(document).load('http://'+ addres +'/level?data='+data+'&time='+time, function(lvl){ 
-		$('.attendance-level').css('height',lvl);});
+	$(document).load('http://'+ addres +'/level', function(lvlDt){
+		var arrayOfStrings = lvlDt.split('?');
+		$('#levelProc').text(arrayOfStrings[0]);
+		$('.attendance-level').css('height',arrayOfStrings[0]);
+		$('#Data').text(arrayOfStrings[1]);});
 }
 
 

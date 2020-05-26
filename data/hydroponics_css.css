@@ -38,7 +38,20 @@ nav{
 }
 
 span#levelProc {
-  text-align:  center;
+	font-weight: bold;
+	color: white;
+	position: inherit;
+	width:100%;
+	text-align:  center;
+}
+
+div#data{
+	float: left;
+	margin-top: 15px;
+	width: 25%;
+}
+span#Data{
+	
 }
 
 /* flower */
@@ -73,11 +86,23 @@ border-radius: 100% 0  90% 50%;
 /*--------------------------------*/
 /* indicate */
 .container{
-    width:100px;
+    width:100%;
     height:350px;
 }
 
 .attendance{
+	width:90px;
+    float:left;
+	background-color:#1f1f1f;
+	margin:7px 1% 5px 5%;
+	padding-bottom:10px;
+	border-style:solid;
+	border-color: #111111 #4e4e4e #4e4e4e #111111;
+	border-width:2px;
+}
+
+.attendance2{
+	position: fixed;
 	width:90%;
     float:left;
 	background-color:#1f1f1f;

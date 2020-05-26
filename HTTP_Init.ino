@@ -9,7 +9,10 @@ void HTTP_init(void) {
 
 void sendLevel()
 {
-   HTTP.send(200, "text/plain", rangeString(sensorValue) +'%');  
+  String asasas = rangeString(sensorValue) +"%?";
+  asasas += dataOfStart;
+  Serial.println(asasas);
+   HTTP.send(200, "text/plain",asasas);  
 }
 
 
@@ -35,7 +38,7 @@ void changeMode()
     password = HTTP.arg("pass");
     //Serial.println("password - " + password);
     WiFi.disconnect();
-    Serial.println("DISCONECT");
+    
     WIFIinit();
   }
   if(stateOf == "AP"){
